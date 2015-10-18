@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Brick.java&apos; to &apos;APCS problems/src/Oct_11_15&apos;&#x0A;- Original project: &apos;APCS problems&apos;&#x0A;- Destination element: &apos;APCS problems/src/Oct_11_15&apos;&#x0A;- Original element: &apos;Brick.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;Oct_11_15" element1="/src&lt;{Brick.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1444582968178" units="1" version="1.0"/>
+</session>

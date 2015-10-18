@@ -1,0 +1,15 @@
+package Oct_11_15;
+//Student Name: josh grace
+//Class: Java AP
+//Date: October 11 2015
+//Assignment 1-12, Exercise 1
+//Method Brick: Given the number of seconds, this method computes the
+//falling speed of a falling brick
+public class Brick {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
