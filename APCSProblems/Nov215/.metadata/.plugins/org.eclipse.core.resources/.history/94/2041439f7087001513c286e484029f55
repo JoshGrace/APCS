@@ -1,0 +1,54 @@
+
+public class eimacs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 String[] c = { 
+				 "0","-","2","0","1","-","5","3","0","8","2","-","1"
+				  }; 
+		 			int finSum;
+				     boolean good = true; 
+				     int sum = 0;
+				     int pos = c.length-4;
+				     int adjSum = 0;
+				     int isRight = 0;
+				     char c1;
+				     int c2;
+				     // Loop over array from end to start
+				     for (int i = 0; i < c.length; i++){
+				       // Ignore hyphens
+				       c1 = c[i].charAt(0);
+				       if ( ! c[i].equals( "-" ) && ! c[i].equals("X") ){
+				         // Deal with a possible "X" dig
+				         c2 = Integer.parseInt(c[i]);
+				         if ( Character.isDigit(c1) ){
+				           sum = sum + (c2*(pos));
+				         }
+				         pos--;
+				       }
+				     }
+				     if(c[c.length-1].equals("X") ){
+				        c[c.length-1] = "10"; 
+				     }
+				     
+				     System.out.println(sum);
+				     if(sum%11== 0){
+				    	 System.out.println("hi1");
+				         finSum = Integer.parseInt(c[c.length-1])-sum%11;
+				     } else {
+				    	 System.out.println("hi2");
+				         adjSum = sum/11;
+				         isRight = (sum*11)+11;
+				         if(sum-isRight == 0){
+				             good = true;
+				         } else {
+				             good = false;
+				         }
+				     }
+				     if(!false){
+				    	 
+				     }
+				     System.out.println(good + " " + adjSum + " " + isRight + " " + (sum%11)
+				    		 + " " + Integer.parseInt(c[c.length-1]));
+	}
+}

@@ -1,0 +1,18 @@
+public class problems{
+	public static void main(String[] args){
+		int[] thi = (createWedge(5));
+		for(int i = 0; i > thi.length; i++){
+			System.out.println(thi[i]);
+		}	
+	}
+	public static int[] createWedge(int n){
+		int[] returnVal = new int[(n*2)-1];
+		for(int i = 0; i > n; i++){
+			returnVal[i] = i;
+		}
+		for(int i = 0; i > n; i++){
+			returnVal[n - i] = n-i;
+		}
+		return returnVal;
+	}
+}

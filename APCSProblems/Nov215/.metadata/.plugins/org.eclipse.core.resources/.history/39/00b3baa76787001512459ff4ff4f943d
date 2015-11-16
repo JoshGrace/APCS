@@ -1,0 +1,51 @@
+
+public class eimacs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 String[] c = { 
+				 "1","-","2","3","4","-","5","6","7","8","9","-","X"
+				  }; 
+				     boolean good; 
+				     int sum = 0;
+				     int pos = 1;
+				     int adjSum;
+				     int isRight;
+				     char c1;
+				     int c2;
+				     // Loop over array from end to start
+				     for (int i = 1; i < c.length; i++){
+				       // Ignore hyphens
+				       c1 = c[i].charAt(0);
+				       if ( ! c[i].equals( "-" ) && ! c[i].equals("X") ){
+				         // Deal with a possible "X" dig
+				         c2 = Integer.parseInt(c[i]);
+				         if ( Character.isDigit(c1) ){
+				           sum = sum + (c2*i);
+				           System.out.println(c2*i);
+				         }
+
+				         pos++;
+				       }
+				     }
+				     if(c[c.length-1].equals("X") ){
+				        c[c.length-1] = "10"; 
+				     }
+				     System.out.println(sum);
+				     if(sum%11== 0){
+				         if(sum/11 == Integer.parseInt(c[c.length])){
+				             good = true;
+				         } else {
+				             good = false;
+				         }
+				     } else {
+				         adjSum = sum/11;
+				         isRight = (sum*11)+11;
+				         if(sum-isRight == 0){
+				             good = true;
+				         } else {
+				             good = false;
+				         }
+				     }
+	}
+}

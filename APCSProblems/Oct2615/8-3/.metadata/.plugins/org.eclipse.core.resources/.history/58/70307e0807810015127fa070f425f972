@@ -1,0 +1,21 @@
+
+public class exercises {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		addIntUnder10(4);
+	}
+	public int addOdds(int n){
+		for(int i = 1; i < n; i += 2){
+			return n;
+		}	
+	}
+	public static int addIntUnder10(int n){
+		int x = 0;
+		for(int i = 0; i < n; i++){
+			System.out.println(x);
+			x =+ i;
+		}
+		return x;
+	}
+}

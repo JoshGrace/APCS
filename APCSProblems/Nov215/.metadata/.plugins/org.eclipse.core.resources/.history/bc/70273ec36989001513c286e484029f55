@@ -1,0 +1,15 @@
+
+public class eimacs {
+
+	public static void main(String[] args) {
+		
+		double[] a = { 3.5, -1.0, 7.8 }; 
+	    int t = 0; 
+
+	    for ( double b : a ) 
+	    { 
+	      t += (int)b; 
+	    }
+
+	}
+}
