@@ -1,0 +1,16 @@
+package com.eimacs.lab05;
+
+/**
+ *
+ * @author |Your name|
+ * @version 1.0 |Today's date|
+ */
+public class TurnLeft extends Action{
+    double space = 0;
+    public TurnLeft(double space){
+        this.space= space;
+    }
+    public String toString(){
+        return "Left " + Double.toString(space);
+    }
+} 

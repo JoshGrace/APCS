@@ -1,0 +1,33 @@
+package com.eimacs.lab04;
+
+import java.util.ArrayList;
+
+public class Bin 
+{ 
+  ArrayList<BinItem> myContents;
+  private String myName = "";
+  public Bin(String name){
+      myName = name;
+       myContents = new  ArrayList<BinItem>(5);
+  }
+  public void add(BinItem item){
+      myContents.add(item);
+  }
+  public ArrayList<BinItem> getContents(){ 
+      return myContents;
+  }
+  public String getName(){
+      return myName;
+  }
+  public String toString() {
+      String returnVal = "Bin " + myName + ":" + "\n";
+  	for (int i = 0; i < myContents.size(); i++) {
+  	    if(myContents.size()-1 > i){
+  	    returnVal = returnVal + myContents.get(i) + "\n";
+  	    } else {
+  	        returnVal = returnVal + myContents.get(i);
+  	    }
+  	}
+  	return returnVal;
+  } 
+} 

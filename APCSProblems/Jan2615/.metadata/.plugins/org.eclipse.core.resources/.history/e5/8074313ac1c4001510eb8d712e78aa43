@@ -1,0 +1,11 @@
+
+public class gk {
+	 int t = 0; 
+	  int i; 
+	  Counter c = new Counter( 10 ); 
+	  for ( i = 0 ; i < 5 ; i++ ) 
+	  { 
+	    c = c.nextCounter(); 
+	    t = c.getN(); 
+	  } 
+}

@@ -1,0 +1,25 @@
+public class EImacs {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] x = { "a", "b", "c", "d" };
+		String[] y = { "membership" };
+		String[] z = { };
+		int[] a = { 1, 2, 2, 3, 3, 3, 4, 4, 4, 4 };
+		System.out.println( arrayToString( x ) );
+	}
+	public static String arrayToString( String[] sArr ) 
+	  { 
+	    String s = "[ "; 
+	    int i = 0; 
+	    while ( i + 1 < sArr.length ) 
+	    { 
+	      s += sArr[ i ] + ", "; 
+	      i++; 
+	    } 
+	    if ( sArr.length > 0 ) 
+	      s += sArr[ i ]; 
+
+	    s += " ]"; 
+	    return s; 
+	  }
+}

@@ -1,0 +1,45 @@
+package com.eimacs.lab05;
+
+import java.awt.Graphics;
+import java.util.ArrayList;
+
+import com.eimacs.lab05gui.Turtle;
+
+/**
+ *
+ * @author |Your name|
+ * @version 1.0 |Today's date|
+ */
+public class TurtleProgram 
+{  ArrayList<Action> myActions;
+boolean isValid;
+  public TurtleProgram(){
+      myActions = new ArrayList<Action>();
+      setIsValid(false);
+  }
+  public void addAction(Action action){
+      myActions.add(action);
+      setIsValid(false);
+  }
+  public String toString(){
+      String returnVal = "";
+      for(int i = 0; i < myActions.size(); i++){
+          if(! (i == myActions.size()-1)){
+              returnVal += myActions.get(i).toString() + "\n";
+          } else {
+              returnVal += myActions.get(i).toString();
+          }
+      }
+      return returnVal;
+  } 
+  public void execute( Turtle t, Graphics g )
+  {
+	  for(Action action : myActions){
+		  
+	  }
+   // t.setHeading( t.getHeading() - myAngle );
+  }
+  public void setIsValid(boolean tF){
+	  isValid = tF;
+  }
+} 

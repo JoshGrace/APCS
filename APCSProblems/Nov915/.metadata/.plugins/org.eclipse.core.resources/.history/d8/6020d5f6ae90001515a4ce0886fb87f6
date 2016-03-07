@@ -1,0 +1,19 @@
+public class EImacs {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println( test( 4, 0 ));
+	}
+	 public static int test( int a, int b ) 
+	  { 
+	    if ( a == 0 ) 
+	      return 1; 
+
+	    if ( b == 0 ) 
+	      return 2; 
+
+	    if ( a / b > 0 ) 
+	      return 3; 
+
+	    return 4; 
+	  }
+}

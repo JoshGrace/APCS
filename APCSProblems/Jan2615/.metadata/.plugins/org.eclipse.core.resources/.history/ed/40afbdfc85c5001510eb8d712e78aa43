@@ -1,0 +1,14 @@
+import com.eimacs.lab02.APPoint;
+import com.eimacs.lab02.APRectangle;
+
+public class thing1 {
+	public static void main( String[] args ){
+		  APRectangle r = new APRectangle( new APPoint( 25, 50 ), 30, 15 );
+		  r.setTopLeft( new APPoint( 31.6, -15 ) );
+		  r.setWidth( 24.3 );
+		  r.setHeight( 64 );
+		  System.out.println( "myTopLeft: " + printAPPoint( r.getTopLeft() ) );
+		  System.out.println( "myWidth: " + r.getWidth() );
+		  System.out.println( "myHeight: " + r.getHeight() );
+		}
+}

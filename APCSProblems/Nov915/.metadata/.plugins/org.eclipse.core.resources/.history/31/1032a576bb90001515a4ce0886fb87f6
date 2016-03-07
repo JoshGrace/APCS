@@ -1,0 +1,33 @@
+public class EImacs {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] x = { "a", "b", "c", "d" };
+		String[] y = { "membership" };
+		String[] z = { };
+		int[] a = { 1, 2, 2, 3, 3, 3, 4, 4, 4, 4 };
+		int[] a = { 1, 1, 2, 1, 2, 3, 1, 2, 3, 4 };
+		System.out.println( blend( a, b ) );
+	}
+	public static int[] blend( int[] a, int[] b ) 
+	  { 
+	    int[] c = new int[ a.length + b.length ]; 
+	    int i = 0; 
+	    while ( i < a.length && i < b.length ) 
+	    { 
+	      c[ 2 * i ] = a[ i ]; 
+	      c[ 2 * i + 1 ] = b[ i ]; 
+	      i++; 
+	    } 
+	    if ( a.length < b.length ) 
+	    { 
+	      for ( int j = i; j < b.length; j++ ) 
+	        c[ i + j ] = b[ j ]; 
+	    } 
+	    else 
+	    { 
+	      for ( int j = i; j < a.length; j++ ) 
+	        c[ i + j ] = a[ j ]; 
+	    } 
+	    return c; 
+	  }
+}

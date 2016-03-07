@@ -1,0 +1,44 @@
+public class APRectangle
+{
+    private APPoint myTopLeft;
+    private double myWidth;
+    private double myHeight;
+
+    /*
+     * Code for the APRectangle constructor, the accessor
+     * methods getTopLeft, getWidth, and getHeight, and
+     * the modifier methods setTopLeft, setWidth, and
+     * setHeight is hidden
+     */
+
+    public APPoint getTopRight()
+    {
+        return new APPoint( myTopLeft.getX() + myWidth,
+                            myTopLeft.getY() );
+    }
+
+    public APPoint getBottomLeft()
+    {
+        return new APPoint( myTopLeft.getX(),
+                            myTopLeft.getY() + myHeight );
+    }
+
+    public APPoint getBottomRight()
+    {
+        return new APPoint( myTopLeft.getX() + myWidth,
+                            myTopLeft.getY() + myHeight );
+    }
+
+    public void shrink( double d )
+    {
+        myWidth *= d/100.0;
+        myHeight *= d/100.0;
+    }
+}
+
+
+public static String printAPRectangle ( APRectangle r )
+{
+    return "[APRectangle " + printAPPoint( r.getTopLeft() ) +
+           " " + r.getWidth() + "," + r.getHeight() + "]";
+}

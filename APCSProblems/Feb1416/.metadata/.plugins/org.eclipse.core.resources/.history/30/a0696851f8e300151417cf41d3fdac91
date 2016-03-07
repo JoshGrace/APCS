@@ -1,0 +1,58 @@
+package com.eimacs.lab04;
+
+import java.util.ArrayList;
+
+public class Warehouse 
+{ 
+  int myBinMax = 0;
+  ArrayList<Footwear> myCatalog;
+  ArrayList<Bin> myBins;
+  public Warehouse(int binMax){
+      myBinMax = binMax;
+      myCatalog = new ArrayList<Footwear>();
+      myBins = new ArrayList<Bin>();
+      for(int i = 0; i < 5; i++){
+          addBin();
+      }
+      
+  }
+  
+  public void addBin(){
+      myBins.add(new Bin("B" + myBins.size()));
+  }
+  
+  public String toString(){
+      String returnVal = "";
+      for(Bin bin : myBins){
+          if(returnVal.length() > 0){
+              returnVal += "\n" + "Bin " + bin.getName() + ":";
+          } else {
+              returnVal += "Bin " + bin.getName() + ":";
+          }
+          for(BinItem thing : bin.getContents()){
+              returnVal += "\n" + Lab04Runner.lookupFootwear(myCatalog, thing.getSKU()) + ", " + thing;
+          }
+      }
+      return returnVal;
+  }
+  public void receive(Footwear shoe, int num){
+	  	boolean shouldAdd = false;
+	  	for (Bin bin : myBins) {
+		  	for (BinItem item : bin.getContents()) {
+			  	if (Lab04Runner.lookupFootwear(myCatalog, item.getSKU()).equals(shoe.getSKU())) {
+				  	shouldAdd = true;
+			  	}
+		  	}
+	  	}
+	  	if(shouldAdd == true){
+	  		myCatalog.add(shoe);
+	  	}
+	  	for(int i = num; num > i; i--){
+	  		for (Bin bin : myBins) {
+	  			for(int n = 0; n < bin.getContents().size(); i ++)
+					bin.add(new BinItem(shoe.getSKU(), 1));
+				}
+	  		}
+	  	}
+  	}
+} 

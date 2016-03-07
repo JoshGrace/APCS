@@ -1,0 +1,33 @@
+package com.eimacs.lab05gui;
+
+import java.awt.FlowLayout;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class TurtleWindow extends JFrame
+{
+  private TurtleController myTurtleController;
+
+  public TurtleWindow()
+  {
+    super( "Lab 05" );
+    myTurtleController = new TurtleController();
+
+    initialize();
+  }
+
+  private void initialize()
+  {
+    JPanel layoutPanel = new JPanel();
+    layoutPanel.setLayout( new FlowLayout() );
+    layoutPanel.add( myTurtleController );
+
+    getContentPane().add( layoutPanel );
+
+    setDefaultCloseOperation( EXIT_ON_CLOSE );
+    pack();
+    setSize( 520, 450 );
+    setLocationRelativeTo( null );
+    setVisible( true );
+  }
+}

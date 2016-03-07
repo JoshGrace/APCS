@@ -1,0 +1,22 @@
+public class EImacs {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//String[] thi = {"v", "c"};
+		//String[] thin = {"k", "c", "l"};
+		int[] a = { 1, 2, 2, 3, 3, 3, 4, 4, 4, 4 };
+		System.out.println( checkIntArray( a ));
+	}
+	public static boolean checkIntArray( int[] a ) 
+	  { 
+	    int i = 1; 
+	    while ( i < a.length ) 
+	    { 
+	      if ( a[ i - 1 ] > a[ i ] ) 
+	        return false; 
+
+	      i++; 
+	    } 
+
+	    return true; 
+	  }
+}

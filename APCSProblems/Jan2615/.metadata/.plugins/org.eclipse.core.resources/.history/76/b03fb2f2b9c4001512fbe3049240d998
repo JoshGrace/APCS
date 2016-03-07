@@ -1,0 +1,36 @@
+package com.eimacs.lab02;
+
+/**
+ *
+ * @author |your name|
+ * @version 1.0 |today's date|
+ */
+public class APRectangle { 
+    
+	  private APPoint myTopLeft; 
+	  private double  myWidth; 
+	  private double  myHeight; 
+	 
+	  public APRectangle( APPoint topLeft, double width, double height ) { 
+	  myTopLeft = topLeft; 
+	  myWidth = width;
+	  myHeight = height;
+	}
+	 public APPoint getTopLeft() { 
+	     return myTopLeft;
+	 } 
+	 public double getWidth() { 
+	     return myWidth; } 
+	 public void setTopLeft( APPoint x ) { 
+	     myTopLeft = x; 
+	 } 
+	 public void setWidth( double y ) { 
+	     myWidth = y; 
+	 }
+	 public double getHeight() { 
+	     return myHeight; 
+	 } 
+	 public void setHeight( double y ) { 
+	     myHeight = y; 
+	 }
+	}

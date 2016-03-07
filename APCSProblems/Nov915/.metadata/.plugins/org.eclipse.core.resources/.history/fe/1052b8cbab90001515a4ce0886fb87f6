@@ -1,0 +1,25 @@
+public class EImacs {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//System.out.println(reverseString( "forward" ));
+		Laugh();
+	}
+	 public static String sayAgain( String word, int num ) 
+	  { 
+	    int k; 
+	    String result = ""; 
+
+	    for ( k = 0 ; k < num ; k++ ) 
+	    { 
+	      result += word; 
+	      result += " "; 
+	    } 
+	    return result; 
+	  } 
+
+	  public static void Laugh() 
+	  { 
+	    String str = "ha"; 
+	    System.out.println( sayAgain( sayAgain( str, 2 ), 3 ) ); 
+	  }
+}

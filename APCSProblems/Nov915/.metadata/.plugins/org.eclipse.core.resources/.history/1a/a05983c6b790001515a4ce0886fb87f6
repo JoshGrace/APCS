@@ -1,0 +1,22 @@
+public class EImacs {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] x = { "a", "b", "c", "d" };
+		String[] y = { "membership" };
+		String[] z = { };
+		int[] a = { 1, 2, 2, 3, 3, 3, 4, 4, 4, 4 };
+		System.out.println( arrayToString( y ) );
+	}
+	public static String arrayToString( String[] sArr ) 
+	  { 
+	    String s = "[ "; 
+	    int i = 0; 
+	    while ( i < sArr.length ) 
+	    { 
+	      s += sArr[ i ] + ", "; 
+	      i++; 
+	    } 
+	    s += "]"; 
+	    return s; 
+	  }
+}

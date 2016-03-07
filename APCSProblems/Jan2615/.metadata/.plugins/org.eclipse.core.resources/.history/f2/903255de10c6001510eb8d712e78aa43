@@ -1,0 +1,74 @@
+public class Book 
+  { 
+    private String myTitle = null; 
+    private String myAuthor = null; 
+    private String myISBN = null; 
+    private int myPubYear = 0; 
+
+    public Book() 
+    { 
+    } 
+
+    public Book( String isbn, int year ) 
+    { 
+      myISBN = isbn; 
+      myPubYear = year; 
+    } 
+
+    public String getAuthor() 
+    { 
+      return myAuthor; 
+    } 
+
+    public void setTitle( String title ) 
+    { 
+      myTitle = title; 
+    } 
+
+    public void setAuthor( String author ) 
+    { 
+      myAuthor = author; 
+    }
+    public void setState( String title, String author, String isbn, int year ) 
+    { 
+      if ( !title.equals( "" ) ) 
+        myTitle = title; 
+      if ( !author.equals( "" ) ) 
+        myAuthor = author; 
+      if ( !isbn.equals( "" ) ) 
+        myISBN = isbn; 
+      if ( year > 0 ) 
+        myPubYear = year; 
+    } 
+
+    public String toString() 
+    { 
+      return "Title: " + myTitle 
+               + "\nAuthor: " + myAuthor 
+               + "\nISBN: " + myISBN 
+               + "\nPublication Year: " + myPubYear; 
+    }
+    public static Book[] getByAuthor( Book[] books, String author ) 
+    { 
+      boolean[] match = new boolean[ books.length ]; 
+      int count = 0; 
+      for ( int i = 0 ; i < books.length ; i++ ) 
+      { 
+        boolean hit = author.equals( books[ i ].getAuthor() ); 
+        match[ i ] = hit; 
+        if ( hit ) 
+          count++; 
+      } 
+      Book[] matchBooks = new Book[ count ]; 
+      int j = 0; 
+      for ( int i = 0 ; i < books.length ; i++ ) 
+      { 
+        if ( match[ i ] ) 
+        { 
+          matchBooks[ j ] = books[ i ]; 
+          j++; 
+        } 
+      } 
+      return matchBooks; 
+    }
+  } 

@@ -1,0 +1,20 @@
+public class EImacs {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] thi = {"v", "c"};
+		String[] thin = {"k", "c", "l"};
+		System.out.println( check( thin, thi ));
+	}
+	public static String check( String[] a, String[] b ) 
+	  { 
+	    int i; 
+
+	    for ( i = 0 ; i < a.length && i < b.length ; i++ ) 
+	    { 
+	      if ( a[ i ].equals( b[ i ] ) ) 
+	        return a[ i ]; 
+	    } 
+
+	    return "None"; 
+	  }
+}

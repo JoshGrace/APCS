@@ -1,0 +1,16 @@
+package com.eimacs.lab05;
+
+/**
+ *
+ * @author |Your name|
+ * @version 1.0 |Today's date|
+ */
+public class MoveBack extends Action{
+    int space = 0;
+    public MoveBack(int space){
+        this.space= space;
+    }
+    public String toString(){
+        return "Back " + Integer.toString(space);
+    }
+} 

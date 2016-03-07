@@ -1,0 +1,114 @@
+package com.eimacs.lab05gui;
+
+import com.eimacs.lab05.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class TurtleController extends JPanel implements ActionListener
+{
+  private JTextArea myProgramDisplay;
+  private TurtleProgram myTurtleProgram;
+  TurtlePlane myTurtlePlane;
+  public TurtleController(TurtlePlane turtlePlane)
+  {
+	myTurtlePlane = turtlePlane;
+	myTurtlePlane.setTurtleController(this);
+    setLayout( new FlowLayout() );
+    setBorder( BorderFactory.createRaisedBevelBorder() );
+    setBackground( Color.gray );
+    setPreferredSize( new Dimension( 180, 350 ) );
+    initialize();
+  }
+
+  public TurtleProgram getTurtleProgram()
+  {
+    return myTurtleProgram;
+  }
+
+  public void actionPerformed( ActionEvent e )
+  {
+	  String actionName = e.getActionCommand();
+
+	  String input = getInput( "How many steps?" );
+	  if ( input != null && !input.trim().equals( "" ) && "Forward".equals( actionName ) )
+	  {
+	    int steps = Integer.parseInt( input );
+	    myTurtleProgram.addAction( new MoveForward( steps ) );
+	  } else if ( input != null && !input.trim().equals( "" ) && "Back".equals( actionName ) )
+	  {
+		int steps = Integer.parseInt( input );
+		myTurtleProgram.addAction( new MoveBack( steps ) );
+	  } else if ( input != null && !input.trim().equals( "" ) && "Left".equals( actionName ) )
+	  {
+	    double steps = Double.parseDouble( input );
+	    myTurtleProgram.addAction( new TurnLeft( steps ) );
+	  } else if ( input != null && !input.trim().equals( "" ) && "Right".equals( actionName ) ){
+		double steps = Double.parseDouble( input );
+		myTurtleProgram.addAction( new TurnRight( steps ) );
+	  } else if("Reset".equals( actionName )){
+		  myTurtleProgram = new TurtleProgram();
+	  } else if("Execute".equals( actionName )){
+		  executeProgram();
+	  } else {
+		  JOptionPane.showMessageDialog(this, actionName);
+	  }
+
+    displayProgram();
+    executeProgram();
+  }
+
+
+  private void initialize()
+  {
+    myTurtleProgram = new TurtleProgram();
+
+    // add action buttons
+    String[] buttons = { "Forward", "Back", "Left", "Right" };
+    for ( String bName : buttons )
+      addButton( bName );
+
+    // add text area for displaying the program
+    myProgramDisplay = new JTextArea( 12, 10 );
+    myProgramDisplay.setEditable( false );
+    JScrollPane areaScrollPane = new JScrollPane( myProgramDisplay );
+    areaScrollPane.setVerticalScrollBarPolicy(
+            JScrollPane.VERTICAL_SCROLLBAR_ALWAYS );
+    add( areaScrollPane );
+
+    // add control buttons
+    addButton( "Execute" );
+    addButton( "Reset" );
+    
+  }
+
+  public void addButton( String buttonName )
+  {
+    JButton newButton = new JButton( buttonName );
+    newButton.setActionCommand( buttonName );
+    newButton.addActionListener( this );
+    add( newButton );
+  }
+  public void displayProgram()
+  {
+    myProgramDisplay.setText( myTurtleProgram.toString() );
+  }
+  private String getInput( String prompt )
+  {
+    return JOptionPane.showInputDialog( this, prompt );
+  }
+  public void executeProgram()
+  {
+    myTurtlePlane.drawPlane();
+  }
+
+}

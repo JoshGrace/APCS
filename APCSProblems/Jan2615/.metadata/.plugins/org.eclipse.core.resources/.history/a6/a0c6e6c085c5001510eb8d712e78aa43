@@ -1,0 +1,61 @@
+import com.eimacs.lab02.*;
+public class gk {
+	 
+	public class APPoint 
+	{ 
+	  private double myX; 
+	  private double myY; 
+
+	  public APPoint( double x, double y ) 
+	  { 
+	    myX = x; 
+	    myY = y; 
+	  } 
+
+	  public double getX() { return myX; } 
+	  public double getY() { return myY; } 
+	  public void setX( double x ) { myX = x; } 
+	  public void setY( double y ) { myY = y; } 
+	} 
+
+	////////////////////////// 
+	// END OF APPoint CLASS // 
+	////////////////////////// 
+	  
+	public static String printAPPoint( APPoint p ){
+	     
+	     return p.getX() + "," + p.getY();
+	}
+	// Insert code for the accessor methods getTopLeft, getWidth, getHeight
+	// and the modifier methods setTopLeft, setWidth, setHeight here
+	public class APRectangle { 
+	    
+	    private APPoint myTopLeft; 
+	    private double  myWidth; 
+	    private double  myHeight; 
+	 
+	    public APRectangle( APPoint topLeft, double width, double height ) { 
+	        myTopLeft = topLeft; 
+	        myWidth = width;
+	        myHeight = height;
+	    }
+	    public APPoint getTopLeft() { 
+	        return myTopLeft;
+	    } 
+	    public double getWidth() { 
+	        return myWidth; 
+	    } 
+	    public void setTopLeft( APPoint x ) { 
+	        myTopLeft = x; 
+	    } 
+	    public void setWidth( double y ) { 
+	        myWidth = y; 
+	    }
+	    public double getHeight() { 
+	        return myHeight; 
+	    } 
+	    public void setHeight( double y ) { 
+	        myHeight = y; 
+	    }
+	}
+}

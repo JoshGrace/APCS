@@ -1,0 +1,45 @@
+import com.eimacs.lab02.*;
+public class gk {
+	 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Book b0 = new Book(); 
+	    Book b1 = new Book(); 
+	    Book b2 = new Book(); 
+	    Book b3 = new Book(); 
+	    b0.setState( "David Copperfield", "Charles Dickens", "54321-87-9-0", 1954 ); 
+	    b1.setState( "The Brethren", "John Grisholm", "54321-87-3-X", 2000 ); 
+	    b2.setState( "Bleak House", "Charles Dickens", "54321-87-5-5", 1978 ); 
+	    b3.setState( "Green Eggs and Ham", "Dr. Seuss", "54321-87-0-1", 1960 ); 
+
+	    Book[] books = { b0, b1, b2, b3 }; 
+	    Book[] classics = getByAuthor( books, "Charles Dickens" );
+	    for(Book thi: classics){
+	    	System.out.println(thi.getAuthor());
+	    }
+	}
+
+	public static Book[] getByAuthor( Book[] books, String author ) 
+    { 
+      boolean[] match = new boolean[ books.length ]; 
+      int count = 0; 
+      for ( int i = 0 ; i < books.length ; i++ ) 
+      { 
+        boolean hit = author.equals( books[ i ].getAuthor() ); 
+        match[ i ] = hit; 
+        if ( hit ) 
+          count++; 
+      } 
+      Book[] matchBooks = new Book[ count ]; 
+      int j = 0; 
+      for ( int i = 0 ; i < books.length ; i++ ) 
+      { 
+        if ( match[ i ] ) 
+        { 
+          matchBooks[ j ] = books[ i ]; 
+          j++; 
+        } 
+      } 
+      return matchBooks; 
+    }
+}

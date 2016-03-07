@@ -1,0 +1,22 @@
+public class EImacs {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[]s = {"x", "y", "z"};
+		System.out.println(xCheck(s));
+	}
+	public static int xCheck( String[] strArr ) 
+	  { 
+	    int n; 
+	    int k; 
+	    n = strArr.length; 
+
+	    for ( k = 0 ; k < strArr.length ; k++ ) 
+	    { 
+	      if ( strArr[ k ].equals( "x" ) ) 
+	      { 
+	        n--; 
+	      } 
+	    } 
+	    return n; 
+	  } 
+}

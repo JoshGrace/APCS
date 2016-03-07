@@ -1,0 +1,29 @@
+package com.eimacs.lab05;
+
+import java.util.ArrayList;
+
+/**
+ *
+ * @author |Your name|
+ * @version 1.0 |Today's date|
+ */
+public class TurtleProgram 
+{  ArrayList<Action> myActions;
+  public TurtleProgram(){
+      myActions = new ArrayList<Action>();
+  }
+  public void addAction(Action action){
+      myActions.add(action);
+  }
+  public String toString(){
+      String returnVal = "";
+      for(int i = 0; i < myActions.size(); i++){
+          if(! (i == myActions.size()-1)){
+              returnVal += myActions.get(i).toString() + "\n";
+          } else {
+              returnVal += myActions.get(i).toString();
+          }
+      }
+      return returnVal;
+  } 
+} 
