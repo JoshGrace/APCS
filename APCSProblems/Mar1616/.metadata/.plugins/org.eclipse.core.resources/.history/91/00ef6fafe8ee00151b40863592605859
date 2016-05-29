@@ -1,0 +1,26 @@
+package com.eimacs.lab07;
+
+/**
+ *
+ * @author |your name|
+ * @version 1.0 |today's date|
+ */
+public class APTimer
+{
+	// Define the APTimer class here
+	  long myStartTime;
+	  long myEndTime;
+	  public APTimer(){
+	      myStartTime = 0;
+	      myEndTime = 0;
+	  }
+	  public int interval(){
+	      return (int) (myEndTime - myStartTime);
+	  }
+	  public void start(){
+	      myStartTime = System.currentTimeMillis();
+	  }
+	  public void stop(){
+	      myEndTime = System.currentTimeMillis();
+	  }
+}

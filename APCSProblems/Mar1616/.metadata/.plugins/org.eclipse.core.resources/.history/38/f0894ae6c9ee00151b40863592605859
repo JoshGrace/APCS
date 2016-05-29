@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class ting {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<Integer> lst = new ArrayList<Integer>();
+		for(int k = 1; k <= 6; k++){
+			lst.add(new Integer(k));
+		}
+		for(int k = 0; k < 3; k++){
+			Integer i = lst.remove(k);
+			lst.add(i);
+		}
+		for(Integer i : lst){
+			System.out.println(i);
+		}
+	}
+}

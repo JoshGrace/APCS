@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class ting {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums = new int[51];
+		for(int k = 0; k < nums.length; k++){
+			nums[k] = 0;
+		}
+		for(int k = 3; k <= 50; k++){
+			nums[k] = 1;
+		}
+		for(int k = 5; k <= 50; k++){
+			nums[k] = 1;
+		}
+	}
+}

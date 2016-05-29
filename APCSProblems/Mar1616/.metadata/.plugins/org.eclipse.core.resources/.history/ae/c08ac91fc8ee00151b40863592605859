@@ -1,0 +1,9 @@
+
+public class ting {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int m = 4, n = 5;
+		double d = Math.sqrt((m + n)/2);
+		System.out.println(d);
+	}
+}

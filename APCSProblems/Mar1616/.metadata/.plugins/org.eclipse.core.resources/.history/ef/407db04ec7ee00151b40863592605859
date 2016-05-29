@@ -1,0 +1,7 @@
+
+public class ting {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println((int)(2.5/1.99) + (int)(2.5*1.99));
+	}
+}

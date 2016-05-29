@@ -1,0 +1,15 @@
+
+public class ting {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][] m = new int[4][4];
+		for(int[] n : m){
+			for(int v : n){
+				v = 0;
+			}
+		}
+		int n = m.length;
+		
+	}
+	
+}

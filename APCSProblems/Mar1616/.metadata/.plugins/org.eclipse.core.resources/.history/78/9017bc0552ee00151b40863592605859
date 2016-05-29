@@ -1,0 +1,49 @@
+
+public class hdasd {
+	 public static void main( String[] args )
+	    {
+		 int[] a = { 4, 2, 3, 5 , 3, 5, 2, 5, 3, 5, 4, 2, 3, 5 , 3, 5, 2, 5, 3, 5, 4, 2, 3, 5 , 3, 5, 2, 5, 3, 5
+				 ,4, 2, 3, 5 , 3, 5, 2, 5, 3, 5 ,4, 2, 3, 5 , 3, 5, 2, 5, 3, 5 ,4, 2, 3, 5 , 3, 5, 2, 5, 3, 5, 4, 
+				 2, 3, 5 , 3, 5, 2, 5, 3, 5,
+				 4, 2, 3, 5 , 3, 5, 2, 5, 3, 5, 4, 2, 3, 5 , 3, 5, 2, 5, 3, 5}; 
+		 order( a ); 
+		 for(int i : a){
+			 System.out.println(i);
+		 }
+	    }
+	 public static void search( Integer[] array, Integer target ) 
+	 { 
+		 int high = array.length; 
+		  int low = -1; 
+		  int probe; 
+
+		  int counter = 0; 
+
+		  while ( high - low > 1 ) 
+		  { 
+		    probe = ( high + low ) / 2; 
+		    if ( target.compareTo( array[ (Integer) probe ] ) < 0 ) 
+		      high = probe; 
+		    else 
+		      low = probe; 
+
+		    counter++; 
+		  }
+		  System.out.println(counter);
+	 }
+	 public static void order( int[] a ) 
+	 { 
+	   for ( int i = 0 ; i < a.length ; i++ ) 
+	   { 
+	     for ( int k = 0 ; k < a.length ; k++ ) 
+	     { 
+	       if ( a[ i ] > a[ k ] ) 
+	       { 
+	         int t = a[ i ]; 
+	         a[ i ] = a[ k ]; 
+	         a[ k ] = t; 
+	       } 
+	     } 
+	   } 
+	 }
+}

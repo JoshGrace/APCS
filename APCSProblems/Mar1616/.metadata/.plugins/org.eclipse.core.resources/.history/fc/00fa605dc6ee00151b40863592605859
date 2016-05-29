@@ -1,0 +1,10 @@
+
+public class ting {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "ABCD";
+		s = s.substring(2, 3) + s.substring(1, 2) + s.substring(0, 1);   
+		System.out.println();
+	}
+	
+}

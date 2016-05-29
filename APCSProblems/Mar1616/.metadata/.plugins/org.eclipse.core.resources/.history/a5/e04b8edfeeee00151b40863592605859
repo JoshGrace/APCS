@@ -1,0 +1,67 @@
+package com.eimacs.lab07gui;
+
+import com.eimacs.lab07.*;
+import java.util.ArrayList;
+import java.util.Collections;
+
+/**
+ *
+ * @author IMACS Curriculum Development Group
+ * @version 2.0 January 2015
+ */
+public class Lab07Runner
+{
+    public static void main( String[] args )
+    {
+    	final int NTESTS = 100;
+    	final int ARRSIZE = 1000;
+    	final int DIR = 1;
+    	String[] orderTypes = { "decreasing", "random", "increasing" };
+
+    	ArrayList<ArrayList<Integer>> a = arrayListOfArrayLists( NTESTS, ARRSIZE, DIR );
+    	APTimer timer = new APTimer();
+    	Sort s = new InsertionSort();
+
+    	timer.start();
+    	for ( ArrayList<Integer> aList : a )
+    	  s.sortList( aList );
+    	timer.stop();
+
+    	System.out.println( "Average time to sort an ArrayList of size " + ARRSIZE + 
+    	                    ", initially in " + orderTypes[ DIR + 1 ] + " order: " +
+    	                    (timer.interval() / (double)NTESTS) + " ms." );
+    }
+    /* 
+     * Random number generator 
+     * 
+     * @param n  a positive integer 
+     * @return an integer chosen at random from 0 through n-1 
+     */ 
+    public static int random( int n ) 
+    { 
+      return (int)(n * Math.random()); 
+    }
+    // Define the static method arrayListOfArrayLists here
+    public static ArrayList<ArrayList<Integer>> arrayListOfArrayLists(int m, int n, int dir){
+    	ArrayList<ArrayList<Integer>> num = new ArrayList<ArrayList<Integer>>();
+        for(int i = 0; i < m; i++){
+        	num.add(randomArrayList(n, dir));
+        }
+        return num;
+    }
+    public static ArrayList<Integer> randomArrayList(int n, int dir){
+        ArrayList<Integer> returnVal = new ArrayList<Integer>();
+        for(int i = 0; i < n; i++){
+            returnVal.add(i, random(1000));
+        }
+        if(dir == -1){
+            Collections.sort(returnVal, Collections.reverseOrder());
+            return returnVal;
+        } else if(dir == 1){
+            Collections.sort(returnVal);
+            return returnVal;
+        } else {
+            return returnVal;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+package test;
+
+public class thing {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		message();
+	}
+	public static void message(){
+		String name1 = "algo";
+		String name2 = "monadock";
+		System.out.println(name1.compareTo(name2));
+	}
+
+}

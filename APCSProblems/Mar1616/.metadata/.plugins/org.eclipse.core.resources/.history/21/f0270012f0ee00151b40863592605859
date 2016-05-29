@@ -1,0 +1,80 @@
+package com.eimacs.lab07gui; 
+
+import com.eimacs.lab07.*; 
+import java.awt.GridLayout; 
+import java.awt.event.ActionEvent; 
+import java.awt.event.ActionListener; 
+import java.util.ArrayList; 
+import javax.swing.BorderFactory; 
+import javax.swing.BoxLayout; 
+import javax.swing.JButton; 
+import javax.swing.JComboBox; 
+import javax.swing.JFrame; 
+import javax.swing.JLabel; 
+import javax.swing.JOptionPane; 
+import javax.swing.JPanel; 
+import javax.swing.JSeparator; 
+import javax.swing.JTextArea; 
+import javax.swing.JTextField; 
+
+/** 
+ * @author IMACS Curriculum Development Group 
+ * @version 1.0 |today's date| 
+ */ 
+public class TestingInterface implements ActionListener 
+{ 
+    /** Instance variables */ 
+    private JPanel mainPanel, mySetupPanel, myRunPanel, myResultsPanel; 
+    private JComboBox<String> mySortChoices, myInitOrders; 
+    private JTextField arrSizeField, nTestsField; 
+    private JTextArea results; 
+    private final String[] SORT_ALGORITHMS = 
+        { "Choose one...", "Selection", "Insertion", "Merge" }; 
+    private final String[] INITIAL_ORDERS =  
+        { "Choose one...", "Increasing", "Random", "Decreasing" }; 
+     
+    /** 
+     * Class constructor 
+     */ 
+    public TestingInterface() 
+    { 
+        /* Create sub-panels of main panel */ 
+        mySetupPanel = new JPanel( new GridLayout( 4, 2, 6, 6 ) ); 
+        myRunPanel = new JPanel(); 
+        myResultsPanel = new JPanel(); 
+         
+        /* Add widgets to sub-panels */ 
+        addWidgets(); 
+         
+        /* Create main panel */ 
+        mainPanel = new JPanel(); 
+        mainPanel.setLayout( new BoxLayout( mainPanel, BoxLayout.PAGE_AXIS ) ); 
+        mainPanel.setBorder( BorderFactory.createEmptyBorder( 5, 5, 5, 5 ) ); 
+         
+        /* Add sub-panels and horizontal separators to main panel */ 
+        mainPanel.add( mySetupPanel ); 
+        mainPanel.add( new JSeparator() ); 
+        mainPanel.add( myRunPanel ); 
+        mainPanel.add( new JSeparator() ); 
+        mainPanel.add( myResultsPanel ); 
+         
+        /* Create the tester window and display it */ 
+        JFrame testerFrame = new JFrame( "Sort Algorithm Tester" ); 
+        testerFrame.setContentPane( mainPanel ); 
+        testerFrame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE ); 
+        testerFrame.pack(); 
+        testerFrame.setLocationRelativeTo( null ); 
+        testerFrame.setVisible( true ); 
+    }
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	} 
+
+    /* 
+     * Code for methods 
+     */ 
+
+} 

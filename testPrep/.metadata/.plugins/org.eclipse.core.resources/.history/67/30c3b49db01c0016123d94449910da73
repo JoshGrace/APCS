@@ -1,0 +1,14 @@
+package test;
+
+public class thing {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		message();
+	}
+	public static void message(){
+		String thi = "123:mess";
+		System.out.println(thi.substring(0, thi.indexOf(":")) + thi.substring(thi.indexOf(":") + 1) );
+	}
+
+}

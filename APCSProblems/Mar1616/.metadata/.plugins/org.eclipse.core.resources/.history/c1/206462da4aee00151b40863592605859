@@ -1,0 +1,25 @@
+
+public class hdasd {
+	 public static void main( String[] args )
+	    {
+		 int[] a = { 23, 2, 55, 131, 2043};
+		 System.out.println(search( a, 23 ));
+	    }
+	 public static int search( int[] a, int target ) 
+	 { 
+	   int low = -1, high = a.length, probe; 
+	   while ( high - low > 1 ) //  
+	   { 
+	     probe = (high + low) / 2; 
+	     if ( a[ probe ] > target ) 
+	       high = probe; 
+	     else 
+	       low = probe; 
+	   } 
+
+	   if ( low != -1 && a[ low ] == target ) 
+	     return low; 
+
+	   return -1;   
+	 }
+}

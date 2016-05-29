@@ -1,0 +1,28 @@
+
+public class hdasd {
+	 public static void main( String[] args )
+	    {
+		 Integer[] a = { 23, 2, 55, 131, 2043};
+		 search(a, 2);
+	    }
+	 public static void search( Integer[] array, Integer target ) 
+	 { 
+		  int high = array.length; 
+		  int low = -1; 
+		  int probe; 
+
+		  int counter = 0; 
+
+		  while ( high - low > 1 ) 
+		  { 
+		    probe = ( high + low ) / 2; 
+		    if ( target.compareTo( array[ probe ] ) < 0 ) 
+		      high = probe; 
+		    else 
+		      low = probe; 
+
+		    counter++; 
+		  }
+		  System.out.println(counter);
+	 }
+}
